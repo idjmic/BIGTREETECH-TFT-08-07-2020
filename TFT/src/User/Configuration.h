@@ -25,7 +25,7 @@
  *
  * Default value is: 1 for LED_OFF
 */
-#define STARTUP_KNOB_LED_COLOR 0         // LED_OFF
+#define STARTUP_KNOB_LED_COLOR 6         // LED_OFF
 #define KEEP_KNOB_LED_COLOR_MARLIN_MODE  // Keeps the LED state in Marlin Mode
 
 /**
@@ -68,7 +68,7 @@
 /**
  *  Text displayed at the top of the TFT in Marlin Mode.
  */
-#define MARLIN_BANNER_TEXT "LCD12864 Simulator"
+#define MARLIN_BANNER_TEXT "iDJMic Custom CR-10"
 
 /**
  *  show banner text at the top of the TFT in Marlin Mode.
@@ -80,7 +80,7 @@
  *  Options:  0: Disabled. RECOMMENDED FOR TFT24
  *            1: Enabled Marlin Fullscreen mode.
  */
-#define DEFAULT_ST7920_FULLSCREEN_MODE 0 // 0: Disabled. RECOMMENDED FOR TFT24
+#define DEFAULT_ST7920_FULLSCREEN_MODE 1 // 0: Disabled. RECOMMENDED FOR TFT24
 
 /**
  * Keep Serial always On (ONLY SUPPORTED ON TFT24 V1.1, TFT35 V3.0, AND TFT28 V3.0)
@@ -91,7 +91,7 @@
  *
  *  Options:  0: Disabled    1: Enabled
  */
-#define SERIAL_ALWAYS_ON 0  // Default: 0 (Disabled)
+#define SERIAL_ALWAYS_ON 1  // Default: 0 (Disabled)
 
 //===========================================================================
 //========================== Touch Mode Settings ============================
@@ -106,7 +106,7 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-#define BAUDRATE 115200
+#define BAUDRATE 250000
 
 /**
  * Default Touch Mode Language
@@ -144,10 +144,10 @@
 #define BACKGROUND_COLOR           1  // Background color // 0x0A29
 #define FONT_COLOR                 0  // Font foreground color
 #define REMINDER_FONT_COLOR        2  // Reminder font color, such as: "No print attached", "Busy processing", etc.
-#define VOLUME_REMINDER_FONT_COLOR 5  // Volume reminder font color, such as: "Card inserted", "Card removed"
+#define VOLUME_REMINDER_FONT_COLOR 2  // Volume reminder font color, such as: "Card inserted", "Card removed"
 #define STATUS_XYZ_BG_COLOR        15 // Background color for X Y Z position display in Status Screen.
-#define LISTVIEW_BORDER_COLOR      15 // Border color in List view
-#define LISTVIEW_ICON_COLOR        15 // icon color in List view
+#define LISTVIEW_BORDER_COLOR      1 // Border color in List view
+#define LISTVIEW_ICON_COLOR        1 // icon color in List view
 
 #define HOTEND_NUM   1    // set in 1~6
 #define EXTRUDER_NUM 1    // set in 1~6
@@ -155,8 +155,8 @@
 
 //                         PLA      PETG      ABS
 #define PREHEAT_LABELS   {"PLA", "PETG", "ABS", "TPU"}
-#define PREHEAT_HOTEND   {200,   250,    230,   230}
-#define PREHEAT_BED      {60,    70,     100,   50}
+#define PREHEAT_HOTEND   {195,   250,    230,   230}
+#define PREHEAT_BED      {65,    70,     100,   50}
 
 #define HEAT_MAX_TEMP    {275,       275,       275,       275,       275,       275,       150,    60}   //max temperature can be set
 #define HEAT_SIGN_ID     {"T0:",     "T1:",     "T2:",     "T3:",     "T4:",     "T5:",     "B:",   "C:"}
@@ -189,15 +189,15 @@
 #define X_MIN_POS 0
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
-#define X_MAX_POS 235
-#define Y_MAX_POS 235
-#define Z_MAX_POS 250
+#define X_MAX_POS 320
+#define Y_MAX_POS 300
+#define Z_MAX_POS 400
 
 // Specify a pause position as { X, Y, Z_raise }
 #define NOZZLE_PAUSE_RETRACT_LENGTH 15   // (mm)
 #define NOZZLE_RESUME_PURGE_LENGTH  16   // (mm)
-#define NOZZLE_PAUSE_X_POSITION     (X_MIN_POS + 10)  // (mm) Must be an integer
-#define NOZZLE_PAUSE_Y_POSITION     (Y_MIN_POS + 10)  // (mm) Must be an integer
+#define NOZZLE_PAUSE_X_POSITION     (X_MIN_POS + 20)  // (mm) Must be an integer
+#define NOZZLE_PAUSE_Y_POSITION     (Y_MIN_POS + 20)  // (mm) Must be an integer
 #define NOZZLE_PAUSE_Z_RAISE        20   // (mm)
 #define NOZZLE_PAUSE_E_FEEDRATE     6000 // (mm/min) retract & purge feedrate
 #define NOZZLE_PAUSE_XY_FEEDRATE    6000 // (mm/min) X and Y axes feedrate
@@ -227,7 +227,7 @@
  * Options:  0: Disabled    1: Enabled    2: Auto-detect [default]
  * 
  */
-#define ENABLE_UBL_VALUE 2
+#define ENABLE_UBL_VALUE 1
 
 /**
  * Enable friendly probe offset language.
@@ -268,8 +268,8 @@
 /**
  * Probe Offset
  */
-#define PROBE_OFFSET_MIN_VALUE     -20.0f
-#define PROBE_OFFSET_MAX_VALUE     20.0f
+#define PROBE_OFFSET_MIN_VALUE     -33.0f
+#define PROBE_OFFSET_MAX_VALUE     4.0f
 #define PROBE_OFFSET_DEFAULT_VALUE 0.0f
 
 /**
@@ -295,7 +295,7 @@
 
 // Smart filament runout detection
 // For use with an encoder disc that toggles runout pin as filament moves
-#define FILAMENT_RUNOUT_DISTANCE_MM 7
+#define FILAMENT_RUNOUT_DISTANCE_MM 20
 
 // Enable alternative Move Menu Buttons Layout matching the direction of actual printer axis.
 // update the icons from alternate icon folder
